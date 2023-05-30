@@ -37,7 +37,7 @@
                     </Picker>
                 </VerticalStackLayout>
             </Frame>
-            <Button Text="Calculate" Clicked="onButtonClicked"/>
+            <Button Text="Calculate" Clicked=""/>
             <VerticalStackLayout>
                 <Label x:Name="OutputLabel"/>
             </VerticalStackLayout>
