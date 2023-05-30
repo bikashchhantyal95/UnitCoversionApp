@@ -9,32 +9,38 @@
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+            <Label Text="Unit Conversion" FontSize="30" HorizontalOptions="Center"/>
+            <Frame>
+                <VerticalStackLayout>
+                    <Label Text="Select Starting Unit"/>
+                    <Picker x:Name="fromUnit" SelectedIndexChanged="startIndexChanged">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>MPH</x:String>
+                                <x:String>KPH</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+                <Frame>
+                <VerticalStackLayout>
+                    <Label Text="Enter a number"/>
+                    <Entry Placeholder="Enter a value.." x:Name="userInput" Keyboard="Numeric"/>
+                </VerticalStackLayout>
+            </Frame>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
-
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
-
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
-
+                <Frame>
+                <VerticalStackLayout>
+                    <Label Text="Select Target Unit"/>
+                    <Picker x:Name="toUnit">
+                    </Picker>
+                </VerticalStackLayout>
+            </Frame>
+            <Button Text="Calculate" Clicked="onButtonClicked"/>
+            <VerticalStackLayout>
+                <Label x:Name="OutputLabel"/>
+            </VerticalStackLayout>
         </VerticalStackLayout>
     </ScrollView>
 
